@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "api": "json-server --watch server/db.json --port 3001",
+    "server": "json-server --watch server/db.json --port 3001",
     "startServer": "node server/app.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
