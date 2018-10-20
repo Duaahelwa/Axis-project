@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
- 
+import Sites from "../pages/Sites";
 
-class Sites extends Component {
+class GetAllSites extends Component {
     // Initialize the state
     constructor(props) {
         super(props);
@@ -21,18 +21,14 @@ class Sites extends Component {
     }
 
     render() {
-        const { sites } = this.state;
         const username = this.props.username;
-        let userSites = sites.filter((site) => site.owner === username).map((site) => <li key={site.id}>{site.title}</li>)
+        
         return (
             <div className="App">
-                <h1>List of sites</h1>
-                <ul>
-                    {userSites}
-                </ul>
+              <Sites username={this.props.username} sites={this.state.sites} /> 
             </div>
         );
     }
 }
 
-export default Sites;
+export default GetAllSites;
