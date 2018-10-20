@@ -27,7 +27,7 @@ class Sites extends Component {
         <h1>List of sites</h1>
         <ul>
           {sites.map((site) =>
-            <li >{site.title}</li>
+            <li key={site.id}>{site.title}</li>
           )}
         </ul>
 
