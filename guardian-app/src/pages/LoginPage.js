@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Users from "../services/UserServices/Users";
-import SitesServices from "../services/SitesServices";
+import Sites from "../services/SitesServices/Sites";
 
 class LoginPage extends Component {
     constructor(props) {
@@ -75,7 +75,7 @@ class LoginPage extends Component {
         } else {
             return (
                 <div>
-                    <SitesServices username={this.state.username} password={this.state.password} />
+                    <Sites username={this.state.username} password={this.state.password} />
                     {/* <LoginAuthentication users={this.props.users} username={this.state.username} password={this.state.password} /> */}
                 </div>
             )

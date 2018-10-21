@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DevicesServices from '../services/DevicesServices';
+import Devices from '../services/DeviceServices/Devices';
 
 
 
@@ -14,7 +14,7 @@ class SitesPage extends Component {
 
 
     handleHideDevices = (e)=> {
-        let showDevices = ! this.state.hideDevices;
+        let showDevices = !this.state.hideDevices;
         this.setState({
            hideDevices : showDevices
         })
@@ -34,8 +34,8 @@ class SitesPage extends Component {
                         sites.filter((site) => site.owner === username).map((site) => 
                             <div>
                             <li key={site.id}>{site.title}</li>
-                            <button onclick ={this.handleHideDevices}>devices</button>
-                            {(this.state.hideDevices) ? <DevicesServices siteId={site.id} sites={this.state.sites} /> : null}
+                            <button  value={site.id} onClick ={this.handleHideDevices}>show devices</button>
+                            {(this.state.hideDevices) ? null : <Devices siteId={site.id} sites={this.state.sites} />  }
                             </div>
                         
                         )}
