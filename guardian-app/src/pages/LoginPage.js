@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Users from "../services/UserServices/Users";
 import Sites from "../services/SitesServices/Sites";
+import { TextField, Grid, Card, Button, CardContent } from "@material-ui/core";
+
 
 class LoginPage extends Component {
     constructor(props) {
@@ -42,45 +44,43 @@ class LoginPage extends Component {
         this.setState({
             getAllUsers: newGetAllUsers
         });
-
-
     }
 
     render() {
-        if (! this.state.getAllUsers) {
+        if (!this.state.getAllUsers) {
             return (
-                <div >
-                    <div className="login-form">
+                <Grid container justify="center" spacing={24} style={{ padding: 24 }}>
+                    <Card>
+                        <CardContent>
 
-                        <form onSubmit={this.handleSubmit.bind(this)}>
-                            <div >
-                                <label>username</label><br />
-                                <input type="text" value={this.state.username} onChange={this.handleChangeUsername} />
-                            </div>
+                            <form onSubmit={this.handleSubmit.bind(this)}>
+                                <Grid item   >
+                                    <TextField label="username" style={{ padding: 24 }} margin="normal" value={this.state.username} onChange={this.handleChangeUsername} />
+                                </Grid>
 
-                            <div>
-                                <label>password</label><br />
-                                <input type="text" value={this.state.password} onChange={this.handleChangePassword} />
-                            </div>
+                                <Grid item  >
+                                    <TextField label="password" style={{ padding: 24 }} margin="normal" value={this.state.password} onChange={this.handleChangePassword} />
+                                </Grid>
 
-                            <div className="login-form-submit">
-                                <input type="submit" value="Login" disabled={this.state.loginDisabled} onClick={this.handleClick} />
-                            </div>
+                                <Grid item >
+                                    <Button variant="outlined" color="primary" type="submit" disabled={this.state.loginDisabled} onClick={this.handleClick} >
+                                        Login
+                                    </Button>
+                                </Grid>
 
-                        </form>
-                    </div>
-                    
-                </div>
+                            </form>
+
+                        </CardContent>
+                    </Card>
+                </Grid>
             );
         } else {
             return (
                 <div>
                     <Sites username={this.state.username} password={this.state.password} />
-                    {/* <LoginAuthentication users={this.props.users} username={this.state.username} password={this.state.password} /> */}
                 </div>
             )
         }
-
     }
 }
 
