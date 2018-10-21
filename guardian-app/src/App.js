@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
-import Sites from "./pages/Sites";
-import Login from "./pages/Login";
-import GetAllUsers from './components/GetAllUsers';
+import React, { Component } from "react";
+import { Link } from 'react-router';
+import HomePage from "./pages/HomePage";
+
 
 class App extends Component {
-  // Initialize the state
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-    }
-  }
-
   render() {
-    const { showSites } = this.state;
-    // let show = (showSites) ? <Sites showSites={this.state.showSites} /> : <Login />;
     return (
-      <div>
-        <GetAllUsers  />
-        {/* {show} */}
-      </div>
-    );
-  }
-}
-
+      // <div>
+      //   <ul className="header">
+      //     <li> <a href="./pages/HomePage">Home</a > </li >
+      //       <li><a href="./pages/LoginPage"> login </a ></li >
+      //         </ul >
+      //         </div >
+      <HomePage />
+              );
+            }
+          }
+          
+          
+          
 export default App;
