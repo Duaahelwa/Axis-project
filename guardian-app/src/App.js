@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavBar from "./component/NavBar";
 import { Link } from 'react-router';
 import HomePage from "./pages/HomePage";
 
@@ -6,17 +7,14 @@ import HomePage from "./pages/HomePage";
 class App extends Component {
   render() {
     return (
-      // <div>
-      //   <ul className="header">
-      //     <li> <a href="./pages/HomePage">Home</a > </li >
-      //       <li><a href="./pages/LoginPage"> login </a ></li >
-      //         </ul >
-      //         </div >
-      <HomePage />
-              );
-            }
-          }
-          
-          
-          
+      <div>
+        <NavBar />
+        <HomePage />
+      </div>
+    );
+  }
+}
+
+
+
 export default App;
