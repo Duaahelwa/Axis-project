@@ -20,13 +20,15 @@ class Devices extends Component {
         }
     }
 
+   
+
     render() {
         const sites = this.props.sites;
         const siteId = this.props.siteId;
-       
+        
             return (
                 <div >
-                   <DevicesPage sites={this.props.sites} devices={this.state.devices} siteId={this.props.siteId} />
+                   <DevicesPage sites={this.props.sites} devices={this.state.devices} siteId={this.props.siteId}/>
                 </div>
             );
         
