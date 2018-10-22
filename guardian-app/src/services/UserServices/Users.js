@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import UserAuth from "./UserAuth";
-import LoginPage from "../../pages/LoginPage";
+import Login from "../../screens/Login";
 
 
 
@@ -25,7 +25,7 @@ class Users extends Component {
     render() {
             return (
                 <div >
-                   <LoginPage users={this.state.users} />
+                   <Login users={this.state.users} />
                 </div>
             )
         

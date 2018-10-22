@@ -26,29 +26,22 @@ class DevicesPage extends Component {
         const siteId = this.props.siteId;
         const deviceId = this.props.deviceId;
         return (
-            <Grid container justify="center" style={{ padding: 24 }}>
+            <div>
                 <Typography style={{ padding: 24 }} variant="title" color="inherit">List of devices</Typography>
-
-                <List>
+                
                     {devices ?
                         devices.filter((device) => device.site_id === siteId).map((device,index) =>
-                            <div key={device.id}>
-                                <Grid item  >
-                                    <ListItem >{device.title}</ListItem>
-                                </Grid >
-                                <Grid item  >
+                        <Grid container spacing={24} style={{padding: 24}}  key={device.id}>
+                                    <Grid item xs={12} sm={6} lg={4} xl={3}>{device.title}</Grid>
                                     <Button size="small" variant="outlined" color="primary" value={device.id} onClick={(e)=>this.handleClick(e,index)}>
-                                    {this.state.showDetail ? "Show Details" : "Hide Details"}{device.id}
+                                    Devices{device.id}
                                     </Button>
                                     {
                                     Number(this.state.value) === device.id ? <DeviceDetails devices={this.props.devices} deviceId={device.id}/>:null
                                     }
-                                </Grid >
-                            </div>
+                            </Grid>
                         ) : null}
-                </List>
-
-            </Grid>
+            </div>
 
         );
     }

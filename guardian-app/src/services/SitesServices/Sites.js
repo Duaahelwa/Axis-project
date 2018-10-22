@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SitesPage from '../../pages/SitesPage';
+import SitesScreen from '../../screens/SitesScreen';
 
 class Sites extends Component {
     // Initialize the state
@@ -24,10 +24,10 @@ class Sites extends Component {
         const username = this.props.username;
         const users = this.props.users;
         const sites = this.state.sites;
-         {
+        {
             return (
                 <div className="App">
-                    <SitesPage username={this.props.username} sites={this.state.sites} />
+                    <SitesScreen username={this.props.username} sites={this.state.sites} />
                 </div>
             );
         }
