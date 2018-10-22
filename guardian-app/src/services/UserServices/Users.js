@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UserAuth from "./UserAuth";
+import LoginPage from "../../pages/LoginPage";
 
 
 
@@ -22,11 +23,9 @@ class Users extends Component {
     }
 
     render() {
-       const username = this.props.username;
-       const password = this.props.password;
             return (
                 <div >
-                   <UserAuth users={this.state.users} username={this.props.username} password={this.props.password} />
+                   <LoginPage users={this.state.users} />
                 </div>
             )
         

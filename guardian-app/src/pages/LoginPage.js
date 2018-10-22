@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Users from "../services/UserServices/Users";
 import Sites from "../services/SitesServices/Sites";
 import { TextField, Grid, Card, Button, CardContent } from "@material-ui/core";
+import UserAuth from "../services/UserServices/UserAuth";
 
 
 class LoginPage extends Component {
@@ -43,6 +44,7 @@ class LoginPage extends Component {
     }
 
     render() {
+        const users = this.props.users;
         if (!this.state.getAllUsers) {
             return (
                 <Grid container justify="center" spacing={24} style={{ padding: 24 }}>
@@ -59,9 +61,9 @@ class LoginPage extends Component {
                                 </Grid>
 
                                 <Grid item >
-                                    <Button variant="outlined" color="primary" type="submit" disabled={this.state.loginDisabled}  >
+                                    <button  className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"  variant="outlined" color="primary" type="submit" disabled={this.state.loginDisabled}  >
                                         Login
-                                    </Button>
+                                    </button>
                                 </Grid>
 
                             </form>
@@ -73,7 +75,7 @@ class LoginPage extends Component {
         } else {
             return (
                 <div>
-                    <Sites username={this.state.username} />
+                    <UserAuth users={this.props.users} username={this.state.username} password={this.state.password}/>
                 </div>
             )
         }
