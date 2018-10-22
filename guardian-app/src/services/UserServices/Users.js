@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import UserAuth from "./UserAuth";
 import Login from "../../screens/Login";
 
 
@@ -11,7 +10,7 @@ class Users extends Component {
             users: [],
         };
     };
- 
+
     async componentDidMount() {
         try {
             await fetch('/users')
@@ -23,13 +22,11 @@ class Users extends Component {
     }
 
     render() {
-            return (
-                <div >
-                   <Login users={this.state.users} />
-                </div>
-            )
-        
-
+        return (
+            <div >
+                <Login users={this.state.users} />
+            </div>
+        )
     }
 }
 

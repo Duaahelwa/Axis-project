@@ -9,7 +9,6 @@ class Sites extends Component {
             sites: []
         }
     }
-
     async componentDidMount() {
         try {
             await fetch('/sites')
@@ -21,16 +20,11 @@ class Sites extends Component {
     }
 
     render() {
-        const username = this.props.username;
-        const users = this.props.users;
-        const sites = this.state.sites;
-        {
             return (
                 <div className="App">
                     <SitesScreen username={this.props.username} sites={this.state.sites} />
                 </div>
             );
-        }
     }
 }
 

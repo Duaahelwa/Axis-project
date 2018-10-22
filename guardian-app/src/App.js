@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import NavBar from "./component/NavBar";
-import { Link } from 'react-router';
-import HomePage from "./pages/HomePage";
+import NavBar from "./components/NavBar";
+import Home from "./screens/Home";
 
 
 class App extends Component {
@@ -9,7 +8,7 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <HomePage />
+        <Home />
       </div>
     );
   }

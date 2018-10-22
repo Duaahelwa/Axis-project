@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DevicesPage from "../../pages/DevicesPage";
+import DevicesScreen from "../../screens/DevicesScreen";
 
 
 class Devices extends Component {
@@ -20,19 +20,12 @@ class Devices extends Component {
         }
     }
 
-   
-
     render() {
-        const sites = this.props.sites;
-        const siteId = this.props.siteId;
-        
             return (
                 <div >
-                   <DevicesPage sites={this.props.sites} devices={this.state.devices} siteId={this.props.siteId}/>
+                   <DevicesScreen sites={this.props.sites} devices={this.state.devices} siteId={this.props.siteId}/>
                 </div>
             );
-        
-
     }
 }
 

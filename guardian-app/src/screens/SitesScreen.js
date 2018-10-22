@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Devices from "../services/DeviceServices/Devices";
-import { Typography, Grid, Card, Button,List,ListItem } from "@material-ui/core";
+import { Typography, Grid, Card, Button } from "@material-ui/core";
 
 class SitesPage extends Component {
     constructor(props) {
@@ -12,7 +12,6 @@ class SitesPage extends Component {
             sameButton: false
         };
     };
-
 
     handleClick = (e, index) => {
         e.preventDefault();
@@ -26,25 +25,18 @@ class SitesPage extends Component {
     }
 
     render() {
-        const sites = this.props.sites;
-        const username = this.props.username;
-
-
         return (
             <Grid container justify="center" style={{ padding: 24 }}>
                 <Card style={{ padding: 24 }} >
-                    
-                        <Typography style={{ padding: 24 }} variant="title" color="inherit">List of sites</Typography>
 
-                    {sites ?
-                        sites.filter((site) => site.owner === username).map((site, index) =>
-                        <Grid container spacing={8} style={{padding: 24}} key={site.id} >
+                    <Typography style={{ padding: 24 }} variant="title" color="inherit">List of sites</Typography>
 
-            
+                    {this.props.sites ?
+                        this.props.sites.filter((site) => site.owner === this.props.username).map((site, index) =>
+                            <Grid container direction="column" spacing={8} style={{ padding: 24 }} key={site.id} >
+
                                 <Grid item xs={12} sm={6} lg={4} xl={3}>{site.title} </Grid>
-                                
-                                    <Button size="small"variant="outlined" color="primary" value={site.id} onClick={(e) => this.handleClick(e, index)}>Devices</Button>
-                              
+                                <Button size="small" variant="outlined" color="primary" value={site.id} onClick={(e) => this.handleClick(e, index)}>Devices</Button>
                                 <div>
                                     {Number(this.state.value) === site.id ?
                                         <Devices sites={this.props.sites} siteId={site.id} />
