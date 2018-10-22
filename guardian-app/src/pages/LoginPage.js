@@ -36,10 +36,6 @@ class LoginPage extends Component {
     };
     handleSubmit = (e) => {
         e.preventDefault();
-    }
-
-
-    handleClick = (e) => {
         let newGetAllUsers = !this.state.getAllUsers;
         this.setState({
             getAllUsers: newGetAllUsers
@@ -53,7 +49,7 @@ class LoginPage extends Component {
                     <Card>
                         <CardContent>
 
-                            <form onSubmit={this.handleSubmit.bind(this)}>
+                            <form onSubmit={(e)=>this.handleSubmit(e)}>
                                 <Grid item   >
                                     <TextField label="username" style={{ padding: 24 }} margin="normal" value={this.state.username} onChange={this.handleChangeUsername} />
                                 </Grid>
@@ -63,7 +59,7 @@ class LoginPage extends Component {
                                 </Grid>
 
                                 <Grid item >
-                                    <Button variant="outlined" color="primary" type="submit" disabled={this.state.loginDisabled} onClick={this.handleClick} >
+                                    <Button variant="outlined" color="primary" type="submit" disabled={this.state.loginDisabled}  >
                                         Login
                                     </Button>
                                 </Grid>
@@ -77,7 +73,7 @@ class LoginPage extends Component {
         } else {
             return (
                 <div>
-                    <Sites username={this.state.username} password={this.state.password} />
+                    <Sites username={this.state.username} />
                 </div>
             )
         }
