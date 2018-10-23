@@ -14,6 +14,11 @@
       "id": 3,
       "title": "Demo site 3",
       "owner": "demouser2"
+    },
+    {
+      "id": 4,
+      "title": "Demo site 4",
+      "owner": "douadoua"
     }
   ],
   "devices": [
