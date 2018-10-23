@@ -4,8 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.
 
 
-# Project Description
-This is a SPA consisting of a Client and and Mock-up-Server created by json server. 
+# Guardian Project Description
+This is a SPA consisting of a Client and and Mock-up-Server created by json server. The style was applied by implementing Material ui-core library (https://material-ui.com/). 
 
 ## How to Run
 
