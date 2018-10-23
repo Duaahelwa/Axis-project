@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { TextField, Grid, Card, Button, CardContent } from "@material-ui/core";
-import Home from "./Home";
-import Sites from "./Sites";
+import LoginAutha from "../services/LoginAutha";
 
 /* 
 /*   Login interface 
@@ -15,7 +14,7 @@ class Login extends Component {
             password: '',
             passwordValid: false,
             loginDisabled: true,
-            showUserScreen: false
+            submit: false
         };
     };
 
@@ -42,16 +41,16 @@ class Login extends Component {
     };
     handleSubmit = (e) => {
         e.preventDefault();
-        let newShowUserScreen = !this.state.showUserScreen;
+        let modifySubmit = !this.state.submit;
         this.setState({
-            showUserScreen: newShowUserScreen
+            submit: modifySubmit
         });
     }
 
     render() {
         return (
             <div>
-                {!this.state.showUserScreen ?
+                {!this.state.submit ?
                     <Grid container justify="center" spacing={24} style={{ padding: 24 }}>
                         <Card>
                             <CardContent>
@@ -72,23 +71,14 @@ class Login extends Component {
                                 </form>
                             </CardContent>
                         </Card>
+
                     </Grid> :
-                    <div>
-                        {this.props.users.find((user) => user.username === this.state.username && user.password === this.state.password) ?//client side Authentication
-                            <Sites sites={this.props.sites} devices={this.props.devices} username={this.state.username} />
-                            : <div>
-                                alert("you entered wrong username or password try again")
-                    <Home />
-                            </div>}
-                    </div>}
+
+                    <LoginAutha users={this.props.users} sites={this.props.sites} devices={this.props.devices} username={this.state.username} password={this.state.password} />
+                }
             </div>
         );
     }
-
-
-
-
-
 }
 
 export default Login;
