@@ -17,7 +17,7 @@ class Sites extends Component {
                 {this.props.sites ?
                     this.props.sites.filter((site) => site.owner === this.props.username).map((site, index) =>
 
-                        <div>
+                        <div key={index}>
                             <Grid item xs={12} sm={6} lg={4} xl={3}>{site.title} </Grid>
                             <Devices devices={this.props.devices} siteId={site.id} />
                         </div>

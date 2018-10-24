@@ -18,7 +18,7 @@ class DeviceDetails extends Component {
                         <li >version{device.version}</li>
                         <li>Is device enabled{device.enabled}</li>
                         <li>Is device connected{device.connected}</li>
-                        {device.storages.map((storage) =>
+                        {device.storages.map((storage,index) =>
                             <div key={index}>
                                 <li > storage name {storage.id}</li>
                                 <li > storage state {storage.state}</li>
