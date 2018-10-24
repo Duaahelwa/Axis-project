@@ -12,7 +12,6 @@ class Devices extends Component {
         super(props);
         this.state = {
             showDetails: true,
-            value: ''
         }
     }
     handleClick = (e, index) => {
@@ -21,7 +20,6 @@ class Devices extends Component {
         const value = e.currentTarget.value;
         this.setState({
             showDetails: hideDetails,
-            value: value
         })
     }
 
